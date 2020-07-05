@@ -24,8 +24,12 @@ h3 {
     color: #ff9d76;
 }
 
+h4 {
+    text-align: left;
+}
+
 p {
-    line-height: 2;
+    line-height: 1.5;
 }
 
 hr {
@@ -36,6 +40,18 @@ hr {
     width: 5%;
     margin: 100px auto 100px auto;
 }
+
+a {
+    color: #333366;
+    margin: 10px 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ---------- Navigation Bar ---------- */
 .nav-bar {
     background-color: #b4f2e1;
     display: flex;
@@ -81,6 +97,7 @@ hr {
     display: none;
 }
 
+/* ---------- Header ---------- */
 .head-container {
     background-color: #f6e1e1;
     padding-top: 50px;
@@ -98,18 +115,7 @@ hr {
     position: absolute;
 }
 
-.resume-btn {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background-color: #30475e;
-    color: white;
-    height: 50px;
-    border-radius: 15px;
-}
-
+/* ---------- Basic Introduction ---------- */
 .intro {
     width: 30%;
     margin: auto;
@@ -149,11 +155,12 @@ hr {
     margin-left: 30px;
 }
 
+/* ---------- Contact ---------- */
 .contact-me {
     margin: 50px auto 50px auto;
 }
 
-.btn {
+.contact-btn {
 	font-weight:bold;
 	font-style:italic;
 	text-decoration:none;
@@ -189,6 +196,7 @@ hr {
 	border-style:solid;
 }
 
+/* ---------- Footer ---------- */
 .bottom-container {
     flex-shrink: 0;
     background-color: #f6e1e1;
@@ -196,16 +204,6 @@ hr {
     padding-top: 30px;
     padding-bottom: 30px;
     color: #333366;
-}
-
-a {
-    color: #333366;
-    margin: 10px 20px;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #ffffff;
 }
 
 /* ---------- Projects ---------- */
@@ -251,8 +249,8 @@ a:hover {
 .col > img {
     object-fit: cover;
     width: 90%;
-    border-radius: 15px;
-    margin: 5% auto;
+    /* border-radius: 15px; */
+    margin: 7% auto;
 }
 
 /* The "show" class is added to the filtered elements */
