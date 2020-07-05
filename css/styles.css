@@ -1,0 +1,328 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5.625rem;
+    margin: 50px auto 0 auto;
+    font-family: 'Pacifico', cursive;
+    color: #ff9d76;
+    line-height: 1.5; /* double space */
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-family: 'Josefin Slab', serif;
+    color: #ff9d76;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+h3 {
+    font-family: 'Rancho', cursive;
+    color: #ff9d76;
+}
+
+p {
+    line-height: 2;
+}
+
+hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-top-width: 5px;
+    color: #EAF6F6;
+    width: 5%;
+    margin: 100px auto 100px auto;
+}
+.nav-bar {
+    background-color: #b4f2e1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6vh;
+}
+
+.nav-logo {
+    color: #eb6383;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 35px;
+    font-family: 'Hi Melody', cursive;
+    line-height: 80px;
+    padding: 0 50px;
+    font-weight: bold;
+}
+
+.nav-item-list {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.nav-item {
+    list-style: none;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.burger div {
+    background-color: #e84a5f;
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+    display: none;
+}
+
+.head-container {
+    background-color: #f6e1e1;
+    padding-top: 50px;
+}
+
+.top-cloud {
+    /* associated with head-container's position */
+    position: absolute;
+    right:10%;
+    /* top: 400px; */
+}
+
+.bottom-cloud {
+    /* associated with head-container's position */
+    position: absolute;
+}
+
+.resume-btn {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #30475e;
+    color: white;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.intro {
+    width: 30%;
+    margin: auto;
+}
+
+.my-profile-img {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+.skill-row {
+    width: 50%;
+    margin:100px auto 200px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.java-img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 30px;
+}
+
+.html-img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 30px;
+}
+
+.css-img {
+    width: 200px;
+    height: 200px;
+    float: right;
+    margin-left: 30px;
+}
+
+.contact-me {
+    margin: 50px auto 50px auto;
+}
+
+.btn {
+	font-weight:bold;
+	font-style:italic;
+	text-decoration:none;
+	font-family:Arial;
+	box-shadow:inset #ffffff 0 5px 8px -1px,#de97ae 1px 5px 2px;
+	o-box-shadow:inset #ffffff 0 5px 8px -1px,#de97ae 1px 5px 2px;
+	-moz-box-shadow:inset #ffffff 0 5px 8px -1px,#de97ae 1px 5px 2px;
+	-webkit-box-shadow:inset #ffffff 0 5px 8px -1px,#de97ae 1px 5px 2px;
+	background:#ffe0eb;
+	background:-o-linear-gradient(90deg, #ffe0eb, #ffe0eb);
+	background:-moz-linear-gradient( center top, #ffe0eb 5%, #ffe0eb 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffe0eb), color-stop(1, #ffe0eb) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe0eb', endColorstr='#ffe0eb');
+	background:-webkit-linear-gradient(#ffe0eb, #ffe0eb);
+	background:-ms-linear-gradient(#ffe0eb, #ffe0eb);
+	background:linear-gradient(#ffe0eb, #ffe0eb);
+	text-indent:0px;
+	line-height:12px;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	border-radius:14px;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:14px;
+	color:#de97ae;
+	width:100px;
+	height:12px;
+	padding:13px;
+	text-shadow:#ffcfe0 -1px -1px 0px;
+	border-color:#ffe0eb;
+	border-width:1px;
+	border-style:solid;
+}
+
+.bottom-container {
+    flex-shrink: 0;
+    background-color: #f6e1e1;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #333366;
+}
+
+a {
+    color: #333366;
+    margin: 10px 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ---------- Projects ---------- */
+.project-container {
+    background-color: #beebe9;
+    min-height: 500px;
+    margin: 5% auto;
+    padding: 5% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.col {
+    background-color: #fffdf9;
+    min-height: 200px;
+    width: 30%;
+    margin-bottom: 30px;
+    border-radius: 10px 10px;
+    padding: 0 5px;
+    display: none; /* hide columns by default */
+}
+
+.filter-btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #de97ae;
+}
+
+.filter-btn.active {
+    background-color: #beebe9;
+    color: white;
+}
+
+/* Make the image fit in the size of box */
+.col > img {
+    object-fit: cover;
+    width: 90%;
+    border-radius: 15px;
+    margin: 5% auto;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+
+/*  Media queries to apply different styles for different media types/devices */
+@media screen and (max-width: 1024px) {
+    .nav-item-list {
+        width: 60%;
+    }
+}
+
+/* Tablet size */
+@media screen and (max-width: 768px) {
+    body {
+        /* prevent horizontal sliding */
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .nav-item-list {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+    }
+    .nav-item {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+
+    .col {
+        width: 45%;
+    }
+
+    .mountain-img {
+        width: 70%;
+    }
+    .top-cloud, .bottom-cloud {
+        width: 25%;
+    }
+}
+
+/* Mobile size */ 
+@media screen and (max-width: 400px) {
+    body {
+        /* prevent horizontal sliding */
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .col {
+        width: 100%;
+    }
+}
