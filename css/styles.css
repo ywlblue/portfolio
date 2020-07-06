@@ -1,3 +1,7 @@
+*, *::after, *::befor {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     text-align: center;
@@ -48,7 +52,7 @@ a {
 }
 
 a:hover {
-    color: #ffffff;
+    color: #3b6978;
 }
 
 /* ---------- Navigation Bar ---------- */
@@ -258,11 +262,119 @@ a:hover {
     display: block;
 }
 
+.modal {
+    position: fixed; /* as page scroll down, the modal will follow */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* center the modal and make it invisible*/
+    transition: 200ms ease-in-out; /* open and close smoothly */
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10; /* make it float on top of the grid */
+    background-color: white;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1); /* make it visible */
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer; /* user would know it's clickable */
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+}
+
+.inner-detail-left {
+    flex: 1;
+    height: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.stack-title {
+    text-align: center;
+}
+
+.tech-item-list {
+    margin: 2% auto; 
+    list-style: none; 
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.tech-item {
+    float: left;
+    padding: 2% 5%;
+}
+
+.inner-detail-right {
+    flex: 1;
+    padding: 10px 5px;
+    line-height: 1.5rem;
+    align-content: center;
+    overflow-y: auto;
+}
+
+.inner-detail-right > p {
+    padding: 2% 10%;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* dim the background */
+    pointer-events: none;
+    width: 100%;
+}
+
+/* capture the overlay event */
+#overlay.active {
+    opacity: 1;
+    pointer-events: all; /* hit any area of the overlay would close the modal */
+}
+
+
 
 /*  Media queries to apply different styles for different media types/devices */
 @media screen and (max-width: 1024px) {
     .nav-item-list {
         width: 60%;
+    }
+    .detail-container {
+        flex-direction: column;
     }
 }
 
@@ -306,6 +418,14 @@ a:hover {
     .top-cloud, .bottom-cloud {
         width: 25%;
     }
+
+    .modal {
+        overflow-x: hidden;
+    }
+
+    .detail-container {
+        flex-direction: column;
+    }
 }
 
 /* Mobile size */ 
@@ -320,7 +440,17 @@ a:hover {
     h2 {
         font-size: 1.5rem;
     }
+    
     .col {
         width: 100%;
     }
+
+    .modal {
+        overflow-x: hidden;
+    }
+
+    .detail-container {
+        flex-direction: column;
+    }
+    
 }
