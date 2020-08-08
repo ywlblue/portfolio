@@ -249,6 +249,23 @@ a:hover {
     width: 80%;
 }
 
+.project-title {
+    text-align: center;
+    font-size: 22px;
+    margin: 5px auto;
+}
+
+.project-intro {
+    margin: 0;
+    font-size: 16px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+
+.show-details {
+    margin-bottom: 20px;
+}
+
 .col {
     background-color: #fffdf9;
     min-height: 200px;
@@ -282,6 +299,7 @@ a:hover {
     width: 90%;
     /* border-radius: 15px; */
     margin: 7% auto;
+    margin-bottom: 2%;
 }
 
 /* The "show" class is added to the filtered elements */
@@ -290,6 +308,8 @@ a:hover {
 }
 
 .modal {
+    width: 70vw;
+    height: 90vh;
     position: fixed; /* as page scroll down, the modal will follow */
     top: 50%;
     left: 50%;
@@ -299,8 +319,8 @@ a:hover {
     border-radius: 10px;
     z-index: 10; /* make it float on top of the grid */
     background-color: white;
-    max-width: 80%;
-    max-height: 80%;
+    /* max-width: 90%;
+    max-height: 90%; */
     overflow-y: auto;
 }
 
@@ -316,7 +336,7 @@ a:hover {
     border-bottom: 1px solid black;
 }
 
-.modal-header .title {
+.modal-header .modal-title {
     font-size: 1.25rem;
     font-weight: bold;
 }
