@@ -93,13 +93,40 @@ a:hover {
     font-weight: bold;
 }
 
-.burger div {
-    background-color: #e84a5f;
-    width: 25px;
-    height: 2px;
-    margin: 5px;
+/* Wrapper */
+#hamnav {
+    background-color: #b4f2e1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6vh;
+}
+
+/* Hide Hamburger */
+#hamburger-icon,
+#hamburger {
     display: none;
 }
+
+/* Horizontal Menu Items */
+#hamitems {
+    display: flex;
+}
+
+#hamitems a {
+    width: 20%;
+    /* 100% / 5 tabs = 20% */
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+#hamitems a:hover {
+    background: #4cd3c2;
+}
+
+
 
 /* ---------- Header ---------- */
 .head-container {
@@ -404,9 +431,6 @@ a:hover {
     .nav-item {
         opacity: 0;
     }
-    .burger {
-        display: block;
-    }
 
     .col {
         width: 45%;
@@ -415,6 +439,7 @@ a:hover {
     .mountain-img {
         width: 70%;
     }
+
     .top-cloud, .bottom-cloud {
         width: 25%;
     }
@@ -426,6 +451,33 @@ a:hover {
     .detail-container {
         flex-direction: column;
     }
+
+    #hamburger-icon {
+        display: inline-block;
+        color: white;
+        background: #709fb0;
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    /* Break down menu items into vertical */
+    #hamitems a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #333;
+    }
+
+    /* Toggle Show/Hide Menu */
+    #hamitems {
+        display: none;
+    }
+
+    #hamnav input:checked~#hamitems {
+        display: block;
+    }
+    
 }
 
 /* Mobile size */ 
@@ -440,7 +492,7 @@ a:hover {
     h2 {
         font-size: 1.5rem;
     }
-    
+
     .col {
         width: 100%;
     }

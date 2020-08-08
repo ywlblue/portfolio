@@ -23,18 +23,28 @@
         <img class="mountain-img" src="images/mountain.png" alt="mountain-img">
     </div>
 
-    <nav class="nav-bar">
+    <!-- <nav class="nav-bar">
+            <label class="nav-logo">Weilan Yu</label>
+            <ul class="nav-item-list">
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="projects.html">Work</a></li>
+                <li class="nav-item"><a href="#">Blog</a></li>
+                <li class="nav-item"><a href="#">Resume</a></li>
+            </ul>
+    </nav> -->
+
+    <nav id="hamnav">
+        <!-- [THE HAMBURGER] -->
         <label class="nav-logo">Weilan Yu</label>
-        <ul class="nav-item-list">
-            <li class="nav-item"><a href="#">About</a></li>
-            <li class="nav-item"><a href="projects.html">Work</a></li>
-            <li class="nav-item"><a href="#">Blog</a></li>
-            <li class="nav-item"><a href="#">Resume</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <label id="hamburger-icon" for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+    
+        <!-- [MENU ITEMS] -->
+        <div id="hamitems">
+            <a href="#">About</a>
+            <a href="projects.html">Works</a>
+            <a href="#">Blog</a>
+            <a href="#">Resume</a>
         </div>
     </nav>
 
