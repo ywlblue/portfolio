@@ -262,8 +262,72 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.show-details {
-    margin-bottom: 20px;
+.intro-demo-separator {
+    border-style: none;
+    border-top-style: dotted;
+    border-top-width: 5px;
+    color: #EAF6F6;
+    width: 20%;
+    margin: 10px auto 0 auto;
+}
+
+/* ------------ Demo Link Section ------------ */
+.demo-link-section {
+    margin: 3% auto;
+}
+.demo-link-section .demo-links {
+    margin: 3% auto;
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 5px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+    background-color: #222;
+    bottom: 130%;
+    color: #fff;
+    font-size: 12px;
+    left: 50%;
+    margin-left: -56px;
+    padding: 6px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    width: 100px;
+    z-index: 4;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.tooltip .tooltiptext::after {
+    border-top: 5px solid #222;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    bottom: -5px;
+    content: " ";
+    font-size: 0px;
+    left: 50%;
+    line-height: 0%;
+    margin-left: -4px;
+    position: absolute;
+    width: 0px;
+    z-index: 1;
+}
+
+.tooltip-front:hover .tooltiptext-front,
+.tooltip-back:hover .tooltiptext-back,
+.tooltip-code:hover .tooltiptext-code,
+.tooltip-detail:hover .tooltiptext-detail {
+    visibility: visible;
+    opacity: 1;
 }
 
 .col {
@@ -276,11 +340,19 @@ a:hover {
     display: none; /* hide columns by default */
 }
 
-.filter-btn {
+/* .filter-btn {
     border: none;
     outline: none;
     padding: 12px 16px;
     background-color: white;
+    cursor: pointer;
+} */
+.filter-btn {
+    margin: auto 0;
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -289,7 +361,8 @@ a:hover {
 }
 
 .filter-btn.active {
-    background-color: #beebe9;
+    /* background-color: #beebe9; */
+    background-color: darkturquoise;
     color: white;
 }
 
@@ -308,8 +381,8 @@ a:hover {
 }
 
 .modal {
-    width: 70vw;
-    height: 90vh;
+    width: 60vw;
+    height: 80vh;
     position: fixed; /* as page scroll down, the modal will follow */
     top: 50%;
     left: 50%;
@@ -319,7 +392,7 @@ a:hover {
     border-radius: 10px;
     z-index: 10; /* make it float on top of the grid */
     background-color: white;
-    /* max-width: 90%;
+    /* max-width: 100%;
     max-height: 90%; */
     overflow-y: auto;
 }
@@ -486,6 +559,7 @@ a:hover {
         box-sizing: border-box;
         display: block;
         width: 100%;
+        height: auto;
         border-top: 1px solid #333;
     }
 

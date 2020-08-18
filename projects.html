@@ -4,25 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Weilan Yu - Projects</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <div class="head-container">
+        <img class="top-cloud" src="images/cloud.png" alt="cloud-img">
+        <h1>Works</h1>
+        <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
+        <img class="mountain-img" src="images/mountain.png" alt="mountain-img">
+    </div>
     <div id="filterContainer">
-        <button class="filter-btn active" onclick="filterSelection('all')"> All</button>
-        <button class="filter-btn" onclick="filterSelection('java')"> Java</button>
-        <button class="filter-btn" onclick="filterSelection('front-end')"> Front End</button>
-        <button class="filter-btn" onclick="filterSelection('nodejs')">Nodejs</button>
+        <nav id="hamnav">
+            <!-- [THE HAMBURGER] -->
+            <label id="hamburger-icon" for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger" />
+        
+            <!-- [MENU ITEMS] -->
+            <div id="hamitems">
+                <a class="filter-btn active" onclick="filterSelection('all')"> All</a>
+                <a class="filter-btn" onclick="filterSelection('java')"> Java</a>
+                <a class="filter-btn" onclick="filterSelection('front-end')"> Front End</a>
+                <a class="filter-btn" onclick="filterSelection('nodejs')">Nodejs</a>
+            </div>
+        </nav>
+        
     </div>
     <div class="project-container">
         <div class="col java">
-            <img src="images/projects/prj-01.jpg" alt="java-img">
+            <img src="images/projects/bookstore.png" alt="java-img">
             <div class="project-title">Online Bookstore</div>
             <div class="project-intro">As an exploration of Java Web I have been working on the idea of e-commerce
                 website.
             </div>
-            <a data-modal-target="#prj-01-modal"><i class="fas fa-info-circle fa-lg show-details"></i></a>
+            <div class="intro-demo-separator"></div>
+            <div class="demo-link-section">
+                <ul class="demo-links">
+                    <li class="tooltip tooltip-front"><a class="tooltip tooltip-front" href="https://github.com/jessieu"><i class="fas fa-book fa-lg"></i></a>
+                        </span><span class="tooltiptext tooltiptext-front">Visit Home Page</span>
+                    </li>
+                    <li class="tooltip tooltip-back"><a href="https://github.com/jessieu"><i class="fas fa-users-cog fa-lg"></i></i></a>
+                        <span class="tooltiptext tooltiptext-back">Visit Admin Panel</span>
+                    </li>
+                    <li class="tooltip tooltip-code">
+                        <a href="https://github.com/jessieu/BookStore/tree/master/BookStoreWebsite"><i
+                                class="fab fa-github fa-lg"></i></a>
+                        <span class="tooltiptext tooltiptext-code">Interested in source code?</span>
+                    </li>
+                    <li class="tooltip tooltip-detail"><a data-modal-target="#prj-01-modal"><i
+                            class="fas fa-info-circle fa-lg show-details"></i></a>
+                    <span class="tooltiptext tooltiptext-detail">Read More</span></li>
+                </ul>
+            </div>
+            
         </div>
         <div class="modal" id="prj-01-modal">
             <div class="modal-header">
@@ -31,32 +67,33 @@
             </div>
             <div class="detail-container">
                 <div class="inner-detail-left">
-                    <div class="modal-image"><img src="images/projects/prj-01.jpg" alt="project 1 image"></div>
+                    <div class="modal-image"><img src="images/projects/bookstore.png" alt="Bookstore Home Page"></div>
                     <div class="tech-stack">
-                        <div class="stack-title">Tech Stack</div>
+                        <div class="stack-title">Front End</div>
                         <ul class="tech-item-list">
-                            <li class="tech-item"><i class="fab fa-java fab-lg">Servlet</i></li>
-                            <li class="tech-item"><i class="fab fa-java fab-lg">JSP</i></li>
-                            <li class="tech-item"><i class="fas fa-database fab-lg">MySQL</i></li>
-                            <li class="tech-item"><i class="fas fa-wallet fab-lg">Hibernate</i></li>
                             <li class="tech-item"><i class="fab fa-html5">HTML</i></li>
                             <li class="tech-item"><i class="fab fa-css3">CSS</i></li>
                             <li class="tech-item"><i class="fab fa-js">JavaScript</i></li>
-
                         </ul>
                     </div>
+                    <div class="modal-image"><img src="images/projects/bookstore-admin.png" alt="Bookstore Admin Page"></div>
+                    <div class="stack-title">Back End</div>
+                    <ul class="tech-item-list">
+                        <li class="tech-item"><i class="fab fa-java fab-lg">Servlet</i></li>
+                        <li class="tech-item"><i class="fab fa-java fab-lg">JSP</i></li>
+                        <li class="tech-item"><i class="fas fa-database fab-lg">MySQL</i></li>
+                        <li class="tech-item"><i class="fas fa-wallet fab-lg">Hibernate</i></li>
+                    </ul>
                 </div>
                 <div class="inner-detail-right">
-                    <span>SITE LINK: <a><u>www.sitedomen.com</u></a></span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odio, debitis cumque ratione
-                        officia aspernatur ea eius a adipisci, labore quia. Repellendus ratione maxime commodi
-                        architecto natus, dicta corporis suscipit? Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Aliquid sed voluptatibus repudiandae! Iste magni ullam dolores commodi alias vitae tempore
-                        magnam vel sint odit soluta, molestiae totam dolorum, nemo delectus. Lorem ipsum dolor sit, amet
-                        consectetur adipisicing elit. At quam ullam, quas quia quasi, optio hic quaerat beatae
-                        voluptatem totam ratione, ea cum. Repellendus ex suscipit voluptatem consequuntur esse cumque!
-                    </p>
-
+                    <div class="bs-front">
+                        <p>
+                        </p>
+                    </div>
+                    <div class="bs-back">
+                        <p>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
