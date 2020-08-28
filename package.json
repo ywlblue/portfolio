@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessieu/portfolio.git"
+  },
+  "author": "Weilan Yu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessieu/portfolio/issues"
+  },
+  "homepage": "https://github.com/jessieu/portfolio#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

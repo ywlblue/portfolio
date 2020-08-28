@@ -114,7 +114,8 @@ a:hover {
 }
 
 #hamitems a {
-    width: 20%;
+    /* width: 25%; */
+    max-width: 50%;
     /* 100% / 5 tabs = 20% */
     padding: 10px;
     color: white;
@@ -351,20 +352,19 @@ a:hover {
     margin: auto 0;
     border: none;
     outline: none;
-    padding: 12px 20px;
-    width: 100%;
+    padding: 12px 16px;
     cursor: pointer;
 }
 
-.filter-btn:hover {
+/* .filter-btn:hover {
     background-color: #de97ae;
-}
+} */
 
 .filter-btn.active {
-    /* background-color: #beebe9; */
+    background-color: #beebe9;
     background-color: darkturquoise;
     color: white;
-}
+} 
 
 /* Make the image fit in the size of box */
 .col > img {
