@@ -4,9 +4,7 @@
   "description": "My Portfolio",
   "main": "app.js",
   "scripts": {
-    "start": "npm run lite",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,7 @@
     "lite-server": "^2.5.4"
   },
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1"
   }
 }
