@@ -341,6 +341,10 @@ a:hover {
     display: none; /* hide columns by default */
 }
 
+/*----- Filter Area ------*/
+#filter-container {
+    margin-top: 5%;
+}
 /* .filter-btn {
     border: none;
     outline: none;
@@ -349,22 +353,30 @@ a:hover {
     cursor: pointer;
 } */
 .filter-btn {
+    background-color: #e4f9ff;
+    border-radius: 16px;
     margin: auto 0;
     border: none;
     outline: none;
-    padding: 12px 16px;
+    padding: 12px 20px;
     cursor: pointer;
 }
 
-/* .filter-btn:hover {
-    background-color: #de97ae;
-} */
+.filter-btn:hover {
+    background-color: #97deb5;
+    border-radius: 16px;
+}
 
-.filter-btn.active {
-    background-color: #beebe9;
+.filter-btn.btn-active {
     background-color: darkturquoise;
     color: white;
+    border-radius: 16px;
 } 
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
 
 /* Make the image fit in the size of box */
 .col > img {
@@ -373,11 +385,6 @@ a:hover {
     /* border-radius: 15px; */
     margin: 7% auto;
     margin-bottom: 2%;
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-    display: block;
 }
 
 .modal {

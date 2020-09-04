@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Weilan Yu - Projects</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Pacifico|Rancho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Hi+Melody&family=Mrs+Sheppards&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -16,87 +19,29 @@
         <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
         <img class="mountain-img" src="images/mountain.png" alt="mountain-img">
     </div>
-    <div id="filterContainer">
-        <nav id="hamnav">
-            <!-- [THE HAMBURGER] -->
-            <label id="hamburger-icon" for="hamburger">&#9776;</label>
-            <input type="checkbox" id="hamburger" />
-        
-            <!-- [MENU ITEMS] -->
-            <div id="hamitems">
-                <a class="filter-btn active" onclick="filterSelection('all')"> All</a>
-                <a class="filter-btn" onclick="filterSelection('java')"> Java</a>
-                <a class="filter-btn" onclick="filterSelection('nodejs')">Nodejs</a>
-            </div>
-        </nav>
-        
+    <nav id="hamnav">
+        <!-- [THE HAMBURGER] -->
+        <label class="nav-logo">Weilan Yu</label>
+        <label id="hamburger-icon" for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+    
+        <!-- [MENU ITEMS] -->
+        <div id="hamitems">
+            <a href="/">Home</a>
+            <a href="/projects">Works</a>
+            <a href="#">Blog</a>
+            <a href="/WeilanYu-Resume.pdf" download="WeilanYu-Resume">Resume</a>
+        </div>
+    </nav>
+    <div id="filter-container">
+        <a class="filter-btn btn-active" onclick="filterSelection('all')"> All</a>
+        <a class="filter-btn" onclick="filterSelection('java')"><span><i class="fab fa-java fa-lg"></i></span>Java</a>
+        <a class="filter-btn" onclick="filterSelection('nodejs')"><span><i class="fab fa-node-js fa-lg"></i></span>Nodejs</a>
     </div>
+
     <div class="project-container">
-        <div class="col java">
-            <img src="images/projects/bookstore.png" alt="java-img">
-            <div class="project-title">Online Bookstore</div>
-            <div class="project-intro">As an exploration of Java Web I have been working on the idea of e-commerce
-                website.
-            </div>
-            <div class="intro-demo-separator"></div>
-            <div class="demo-link-section">
-                <ul class="demo-links">
-                    <li class="tooltip tooltip-front"><a class="tooltip tooltip-front" href="https://github.com/jessieu"><i class="fas fa-book fa-lg"></i></a>
-                        </span><span class="tooltiptext tooltiptext-front">Visit Home Page</span>
-                    </li>
-                    <li class="tooltip tooltip-back"><a href="https://github.com/jessieu"><i class="fas fa-users-cog fa-lg"></i></i></a>
-                        <span class="tooltiptext tooltiptext-back">Visit Admin Panel</span>
-                    </li>
-                    <li class="tooltip tooltip-code">
-                        <a href="https://github.com/jessieu/BookStore/tree/master/BookStoreWebsite"><i
-                                class="fab fa-github fa-lg"></i></a>
-                        <span class="tooltiptext tooltiptext-code">Interested in source code?</span>
-                    </li>
-                    <li class="tooltip tooltip-detail"><a data-modal-target="#prj-01-modal"><i
-                            class="fas fa-info-circle fa-lg show-details"></i></a>
-                    <span class="tooltiptext tooltiptext-detail">Read More</span></li>
-                </ul>
-            </div>
-            
-        </div>
-        <div class="modal" id="prj-01-modal">
-            <div class="modal-header">
-                <div class="modal-title">Book Store</div>
-                <button data-close-button class="close-button">&times;</button>
-            </div>
-            <div class="detail-container">
-                <div class="inner-detail-left">
-                    <div class="modal-image"><img src="images/projects/bookstore.png" alt="Bookstore Home Page"></div>
-                    <div class="tech-stack">
-                        <div class="stack-title">Front End</div>
-                        <ul class="tech-item-list">
-                            <li class="tech-item"><i class="fab fa-html5">HTML</i></li>
-                            <li class="tech-item"><i class="fab fa-css3">CSS</i></li>
-                            <li class="tech-item"><i class="fab fa-js">JavaScript</i></li>
-                        </ul>
-                    </div>
-                    <div class="modal-image"><img src="images/projects/bookstore-admin.png" alt="Bookstore Admin Page"></div>
-                    <div class="stack-title">Back End</div>
-                    <ul class="tech-item-list">
-                        <li class="tech-item"><i class="fab fa-java fab-lg">Servlet</i></li>
-                        <li class="tech-item"><i class="fab fa-java fab-lg">JSP</i></li>
-                        <li class="tech-item"><i class="fas fa-database fab-lg">MySQL</i></li>
-                        <li class="tech-item"><i class="fas fa-wallet fab-lg">Hibernate</i></li>
-                    </ul>
-                </div>
-                <div class="inner-detail-right">
-                    <div class="bs-front">
-                        <p>
-                        </p>
-                    </div>
-                    <div class="bs-back">
-                        <p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="overlay"></div>
+        <%- include('project-partials/bookstore.ejs') %>
+        <%- include('project-partials/mdBlog.ejs') %>
         <div class="col java">
             <img src="images/projects/prj-01.jpg" alt="java-img">
             <div class="project-title">Java</div>
@@ -104,7 +49,7 @@
         </div>
         <div class="col java">
             <img src="images/projects/prj-01.jpg" alt="java-img">
-            <div class="project-title">Online Bookstore</div>
+            <div class="project-title">Java</div>
             <div class="project-intro">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
         </div>
         <div class="col nodejs">
@@ -130,8 +75,8 @@
         <a class="footer-link" href="#"><i class="fas fa-blog"></i></a>
         <p class="copyright">© 2020 Weilan Yu.</p>
     </div>
+    <script src="https://kit.fontawesome.com/c852dd71e5.js" crossorigin="anonymous"></script>
+    <script src="js/essential.js"></script>
 </body>
-<script src="https://kit.fontawesome.com/c852dd71e5.js" crossorigin="anonymous"></script>
-<script src="js/essential.js"></script>
 
 </html>
