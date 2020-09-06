@@ -2,10 +2,13 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
+process.env.PWD = process.cwd()
+app.set('views', path.join(process.env.PWD, 'views'));
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/blog', express.static(path.join(__dirname, 'hexo/public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use('/blog', express.static(path.join(__dirname, 'hexo/public')));
+app.use(express.static(path.join(process.env.PWD, 'public')));
+app.use('/blog', express.static(path.join(process.env.PWD, 'hexo/public')));
 
 var indexRouter = require("./routes/index");
 var projectRouter = require("./routes/projects");
