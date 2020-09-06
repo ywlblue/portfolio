@@ -4,13 +4,18 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/blog', express.static(path.join(__dirname, 'hexo/public')));
 
 var indexRouter = require("./routes/index");
 var projectRouter = require("./routes/projects");
 
 app.use("/", indexRouter);
 app.use("/projects", projectRouter);
+// The path that you provide to the express.static 
+// function is relative to the directory from where 
+// you launch your node process.
+
 
 // error handler
 app.use(function (err, req, res, next) {
