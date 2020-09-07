@@ -2,9 +2,9 @@
 title: How to Integrate Hexo Into An Exisiting App
 date: 2020-09-06 18:03:10
 tags: tech
+photos: 
+	- https://i.loli.net/2020/09/07/GWQ93pv2TXgOPHB.png 
 ---
-
-![](https://i.loli.net/2020/09/07/GWQ93pv2TXgOPHB.png)
 
 This is my first post. I spent a day on figuring out how to add a blog module into my portfolio and deploy it to heroku. And ta da, I did it as you are reading this post. 
 
