@@ -686,13 +686,17 @@ a:hover {
         display: block;
     }
     
+    .detail-container {
+        flex-direction: column;
+    }
+
     .contact-me {
         width: 70%;
     }
 }
 
 /* Mobile size */ 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
     body {
         /* prevent horizontal sliding */
         overflow-x: hidden;
@@ -706,6 +710,11 @@ a:hover {
 
     .intro {
         width: 70%;
+    }
+
+    .nav-logo {
+        line-height: normal;
+        font-size: 24px;
     }
 
     .skill-row {
@@ -750,36 +759,19 @@ a:hover {
         text-align: left;
     }
 
-
-    /* .skill-row {
-        width: 70%;
-        margin: 50px auto;
-        text-align: center;
-        line-height: 2;
-        flex-direction: column;
-    }
-
-    .skill-content {
-        align-items: center;
-    }
-
-    .skill-title {
-        text-align: center;
-    }
-
-    .skill-img {
-        margin: 1% auto;
-        width: 200px;
-        height: 200px;
-        align-items: center;
-    }
-
-    .skill-description {
-        text-align: center;
-    } */
-
     .col {
         width: 100%;
+    }
+
+    #filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+    }
+
+    .filter-btn {
+        width: 30%;
+        margin: 5px auto;
     }
 
     .modal {
