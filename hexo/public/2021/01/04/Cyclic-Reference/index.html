@@ -3,21 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tags | Weilan&#39;s Blog</title>
+  <title>Cyclic Reference | Weilan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="tech" />
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://weilanyu.herokuapp.com/blog/tags/index.html">
+  
+  <meta name="description" content="Have learned Cyclic Reference in my database introduction class, but never ran into that situation or even able to put myself into the position. Today, finally I found a bug related to it and refresh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cyclic Reference">
+<meta property="og:url" content="https://weilanyu.herokuapp.com/blog/2021/01/04/Cyclic-Reference/index.html">
 <meta property="og:site_name" content="Weilan&#39;s Blog">
+<meta property="og:description" content="Have learned Cyclic Reference in my database introduction class, but never ran into that situation or even able to put myself into the position. Today, finally I found a bug related to it and refresh">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-06T23:05:30.000Z">
-<meta property="article:modified_time" content="2020-09-06T23:05:50.940Z">
+<meta property="og:image" content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconexperience.com%2Fo_collection%2Ficons%2F%3Ficon%3Darrow_loop3&psig=AOvVaw1c_EraO2l0W7wp3_moLUxt&ust=1609911053907000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD2up2IhO4CFQAAAAAdAAAAABAf">
+<meta property="article:published_time" content="2021-01-05T05:05:05.000Z">
+<meta property="article:modified_time" content="2021-01-05T05:31:51.371Z">
 <meta property="article:author" content="Weilan Yu">
+<meta property="article:tag" content="tech">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconexperience.com%2Fo_collection%2Ficons%2F%3Ficon%3Darrow_loop3&psig=AOvVaw1c_EraO2l0W7wp3_moLUxt&ust=1609911053907000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD2up2IhO4CFQAAAAAdAAAAABAf">
   
     <link rel="alternate" href="/atom.xml" title="Weilan&#39;s Blog" type="application/atom+xml">
   
@@ -52,7 +59,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -102,15 +109,25 @@
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="page-"  class="article article-type-page" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Cyclic-Reference" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" target="_blank" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconexperience.com%2Fo_collection%2Ficons%2F%3Ficon%3Darrow_loop3&psig=AOvVaw1c_EraO2l0W7wp3_moLUxt&ust=1609911053907000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD2up2IhO4CFQAAAAAdAAAAABAf" rel="gallery_ckjjkm0qx00004tv4ffyrapl8 noopener">
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconexperience.com%2Fo_collection%2Ficons%2F%3Ficon%3Darrow_loop3&psig=AOvVaw1c_EraO2l0W7wp3_moLUxt&ust=1609911053907000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD2up2IhO4CFQAAAAAdAAAAABAf" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
     
       <header class="article-header">
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      tags
+      Cyclic Reference
     </h1>
   
 
@@ -118,8 +135,8 @@
     
     <div class="article-meta">
       
-	<a href="/blog/tags/index.html" class="article-date">
-	  <time datetime="2020-09-06T23:05:30.000Z" itemprop="datePublished">September 6, 2020</time>
+	<a href="/blog/2021/01/04/Cyclic-Reference/" class="article-date">
+	  <time datetime="2021-01-05T05:05:05.000Z" itemprop="datePublished">January 4, 2021</time>
 	</a>
 
        
@@ -131,18 +148,28 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Have learned <code>Cyclic Reference</code> in my database introduction class, but never ran into that situation or even able to put myself into the position. Today, finally I found a bug related to it and refresh my memory about what is cyclic reference and why it’s bad.</p>
+<a id="more"></a>
+
+<p>This morning, my co-worker found an error in QA said <code>run out of heap space</code>, which slow down our QA server and causes lots of test cases failed. And then they want me to check whether our entity classes have any cyclic reference. Don’t remember what’s that, and I do a quick lookup on it. Thus, I have to write it down in case I have to look it up again.</p>
+<p>What’s cyclic reference? On my word, an entity A contains a reference to entity B, and then entity B contains reference to A, which results in a closed loop. It increases the likelihood of error and data inconsistency. Though I am not sure whether this circular reference causes our heap error, if we don’t catch it today, it can be a nightmare someday.</p>
+<p>Reference</p>
+<p><a target="_blank" rel="noopener" href="https://www.codeproject.com/Articles/38655/Prevent-Circular-References-in-Database-Design">Prevent Circular References in Database Design</a></p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
       
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tech/" rel="tag">tech</a></li></ul>
+
       
         
 	<div id="comment">
 	
 	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/blog/tags/index.html" data-title="tags" data-url="https://weilanyu.herokuapp.com/blog/tags/index.html"></div>
+	 <div class="ds-thread" data-thread-key="/blog/2021/01/04/Cyclic-Reference/" data-title="Cyclic Reference" data-url="https://weilanyu.herokuapp.com/blog/2021/01/04/Cyclic-Reference/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -170,212 +197,30 @@
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2020/12/12/Optimize-Performance-of-MongoDB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Optimize Performance of MongoDB</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 <!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav">None</ol>
+    
+    </div>
+  </aside>
 </section>
-          <aside id="sidebar">
-  
-    <div style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 72%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 36px; width: 100%;" placeholder=" Search…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="Search">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/blog/',
-        CONTENT_URL: '/blog/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/blog/js/insight.js"></script>
-
-
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Connect With Us</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-   			<li><a target="_blank" rel="noopener" href="https://github.com/jessieu" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
-
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a target="_blank" rel="noopener" href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a target="_blank" rel="noopener" href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a target="_blank" rel="noopener" href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a target="_blank" rel="noopener" href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a target="_blank" rel="noopener" href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a target="_blank" rel="noopener" href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/blog/2021/01/04/Cyclic-Reference/" title=""><img width="50" height="50" src="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.iconexperience.com%2Fo_collection%2Ficons%2F%3Ficon%3Darrow_loop3&amp;psig=AOvVaw1c_EraO2l0W7wp3_moLUxt&amp;ust=1609911053907000&amp;source=images&amp;cd=vfe&amp;ved=0CAIQjRxqFwoTCKD2up2IhO4CFQAAAAAdAAAAABAf" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/blog/2021/01/04/Cyclic-Reference/">Cyclic Reference</a></h6>
-              <span>January 4, 2021</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/blog/2020/12/12/Optimize-Performance-of-MongoDB/" title=""><img width="50" height="50" src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2017/01/mongodb.png?w=775" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/blog/2020/12/12/Optimize-Performance-of-MongoDB/">Optimize Performance of MongoDB</a></h6>
-              <span>December 12, 2020</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-thumbnail">
-                <a href="/blog/2020/09/06/How-to-Integrate-Hexo-Into-An-Exisiting-App/" title=""><img width="50" height="50" src="https://i.loli.net/2020/09/07/GWQ93pv2TXgOPHB.png" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
-              </div>
-              <div class="widget-entry-summary">
-            
-
-              <h6 style="margin: 0;"><a href="/blog/2020/09/06/How-to-Integrate-Hexo-Into-An-Exisiting-App/">How to Integrate Hexo Into An Exisiting App</a></h6>
-              <span>September 6, 2020</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/blog/2020/09/06/hello-world/">Hello World</a></h6>
-              <span>September 6, 2020</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/miscellaneous/">miscellaneous</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/tech/" rel="tag">tech</a><span class="tag-list-count">3</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/blog/tags/tech/" style="font-size: 10px;">tech</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
         
       </div>
 
